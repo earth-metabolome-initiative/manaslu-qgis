@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveDateTime="2026-06-23T11:13:36" saveUser="pma" saveUserFull="pma" projectname="manaslu" version="3.40.5-Bratislava">
+<qgis saveDateTime="2026-06-23T11:03:04" saveUser="pma" saveUserFull="pma" projectname="manaslu" version="3.40.5-Bratislava">
   <homePath path=""/>
   <title>manaslu</title>
   <transaction mode="Disabled"/>
@@ -516,7 +516,7 @@
       <flags>
         <Identifiable>1</Identifiable>
         <Removable>1</Removable>
-        <Searchable>0</Searchable>
+        <Searchable>1</Searchable>
         <Private>0</Private>
       </flags>
       <temporal mode="0" enabled="0" bandNumber="1" fetchMode="0">
@@ -618,20 +618,6 @@
       </elevation>
       <customproperties>
         <Option type="Map">
-          <Option value="copy" type="QString" name="QFieldSync/action"/>
-          <Option value="{}" type="QString" name="QFieldSync/attachment_naming"/>
-          <Option value="" type="QString" name="QFieldSync/attribute_editing_locked_expression"/>
-          <Option value="no_action" type="QString" name="QFieldSync/cloud_action"/>
-          <Option value="" type="QString" name="QFieldSync/feature_addition_locked_expression"/>
-          <Option value="" type="QString" name="QFieldSync/feature_deletion_locked_expression"/>
-          <Option value="" type="QString" name="QFieldSync/geometry_editing_locked_expression"/>
-          <Option value="{}" type="QString" name="QFieldSync/photo_naming"/>
-          <Option value="{}" type="QString" name="QFieldSync/relationship_maximum_visible"/>
-          <Option value="30" type="int" name="QFieldSync/tracking_distance_requirement_minimum_meters"/>
-          <Option value="false" type="bool" name="QFieldSync/tracking_erroneous_distance_safeguard_maximum_meters"/>
-          <Option value="0" type="int" name="QFieldSync/tracking_measurement_type"/>
-          <Option value="30" type="int" name="QFieldSync/tracking_time_requirement_interval_seconds"/>
-          <Option value="0" type="int" name="QFieldSync/value_map_button_interface_threshold"/>
           <Option value="Undefined" type="QString" name="identify/format"/>
         </Option>
       </customproperties>
@@ -1094,18 +1080,6 @@ def my_form_open(dialog, layer, feature):
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" readOnly="0" labelsEnabled="1" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="0" simplifyDrawingTol="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" maxScale="0" legendPlaceholderImage="" simplifyLocal="1" type="vector" autoRefreshTime="0" minScale="100000000" refreshOnNotifyEnabled="0" wkbType="Point" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyMaxScale="1" geometry="Point">
-      <extent>
-        <xmin>6.93468379974364968</xmin>
-        <ymin>47.00093841552730112</ymin>
-        <xmax>6.93468475341796964</xmax>
-        <ymax>47.00094604492190342</ymax>
-      </extent>
-      <wgs84extent>
-        <xmin>6.93468379974364968</xmin>
-        <ymin>47.00093841552730112</ymin>
-        <xmax>6.93468475341796964</xmax>
-        <ymax>47.00094604492190342</ymax>
-      </wgs84extent>
       <id>manaslu_854e20dc_43c1_47af_99b2_77fecdfb7814</id>
       <datasource>./observations.gpkg|layername=observations</datasource>
       <keywordList>
@@ -2590,18 +2564,6 @@ def my_form_open(dialog, layer, feature):
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer autoRefreshMode="Disabled" readOnly="0" labelsEnabled="1" hasScaleBasedVisibilityFlag="0" simplifyDrawingHints="1" simplifyDrawingTol="1" styleCategories="AllStyleCategories" symbologyReferenceScale="-1" maxScale="0" legendPlaceholderImage="" simplifyLocal="1" type="vector" autoRefreshTime="0" minScale="100000000" refreshOnNotifyEnabled="0" wkbType="PolygonZ" refreshOnNotifyMessage="" simplifyAlgorithm="0" simplifyMaxScale="1" geometry="Polygon">
-      <extent>
-        <xmin>84.61560318948490078</xmin>
-        <ymin>28.56279819824349886</ymin>
-        <xmax>84.70745261429479456</xmax>
-        <ymax>28.61564911652460097</ymax>
-      </extent>
-      <wgs84extent>
-        <xmin>84.61560318948490078</xmin>
-        <ymin>28.56279819824349886</ymin>
-        <xmax>84.70745261429479456</xmax>
-        <ymax>28.61564911652460097</ymax>
-      </wgs84extent>
       <id>manaslu_emi_kml_2c23f541_7a36_4bbd_a5ee_5c1c669e0451</id>
       <datasource>./optimized_maps/Manaslu-EMI.gpkg|layername=Manaslu_EMI</datasource>
       <keywordList>
@@ -2876,20 +2838,6 @@ def my_form_open(dialog, layer, feature):
       <legend showLabelLegend="0" type="default-vector"/>
       <referencedLayers/>
       <fieldConfiguration>
-        <field configurationFlags="NoFlag" name="fid">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
-        <field configurationFlags="NoFlag" name="id">
-          <editWidget type="">
-            <config>
-              <Option/>
-            </config>
-          </editWidget>
-        </field>
         <field configurationFlags="NoFlag" name="Name">
           <editWidget type="">
             <config>
@@ -2969,23 +2917,19 @@ def my_form_open(dialog, layer, feature):
         </field>
       </fieldConfiguration>
       <aliases>
-        <alias index="0" name="" field="fid"/>
-        <alias index="1" name="" field="id"/>
-        <alias index="2" name="" field="Name"/>
-        <alias index="3" name="" field="description"/>
-        <alias index="4" name="" field="timestamp"/>
-        <alias index="5" name="" field="begin"/>
-        <alias index="6" name="" field="end"/>
-        <alias index="7" name="" field="altitudeMode"/>
-        <alias index="8" name="" field="tessellate"/>
-        <alias index="9" name="" field="extrude"/>
-        <alias index="10" name="" field="visibility"/>
-        <alias index="11" name="" field="drawOrder"/>
-        <alias index="12" name="" field="icon"/>
+        <alias index="0" name="" field="Name"/>
+        <alias index="1" name="" field="description"/>
+        <alias index="2" name="" field="timestamp"/>
+        <alias index="3" name="" field="begin"/>
+        <alias index="4" name="" field="end"/>
+        <alias index="5" name="" field="altitudeMode"/>
+        <alias index="6" name="" field="tessellate"/>
+        <alias index="7" name="" field="extrude"/>
+        <alias index="8" name="" field="visibility"/>
+        <alias index="9" name="" field="drawOrder"/>
+        <alias index="10" name="" field="icon"/>
       </aliases>
       <splitPolicies>
-        <policy policy="Duplicate" field="fid"/>
-        <policy policy="Duplicate" field="id"/>
         <policy policy="Duplicate" field="Name"/>
         <policy policy="Duplicate" field="description"/>
         <policy policy="Duplicate" field="timestamp"/>
@@ -2999,8 +2943,6 @@ def my_form_open(dialog, layer, feature):
         <policy policy="Duplicate" field="icon"/>
       </splitPolicies>
       <duplicatePolicies>
-        <policy policy="Duplicate" field="fid"/>
-        <policy policy="Duplicate" field="id"/>
         <policy policy="Duplicate" field="Name"/>
         <policy policy="Duplicate" field="description"/>
         <policy policy="Duplicate" field="timestamp"/>
@@ -3014,8 +2956,6 @@ def my_form_open(dialog, layer, feature):
         <policy policy="Duplicate" field="icon"/>
       </duplicatePolicies>
       <defaults>
-        <default applyOnUpdate="0" expression="" field="fid"/>
-        <default applyOnUpdate="0" expression="" field="id"/>
         <default applyOnUpdate="0" expression="" field="Name"/>
         <default applyOnUpdate="0" expression="" field="description"/>
         <default applyOnUpdate="0" expression="" field="timestamp"/>
@@ -3029,8 +2969,6 @@ def my_form_open(dialog, layer, feature):
         <default applyOnUpdate="0" expression="" field="icon"/>
       </defaults>
       <constraints>
-        <constraint constraints="3" exp_strength="0" unique_strength="1" notnull_strength="1" field="fid"/>
-        <constraint constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0" field="id"/>
         <constraint constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0" field="Name"/>
         <constraint constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0" field="description"/>
         <constraint constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0" field="timestamp"/>
@@ -3044,8 +2982,6 @@ def my_form_open(dialog, layer, feature):
         <constraint constraints="0" exp_strength="0" unique_strength="0" notnull_strength="0" field="icon"/>
       </constraints>
       <constraintExpressions>
-        <constraint desc="" exp="" field="fid"/>
-        <constraint desc="" exp="" field="id"/>
         <constraint desc="" exp="" field="Name"/>
         <constraint desc="" exp="" field="description"/>
         <constraint desc="" exp="" field="timestamp"/>

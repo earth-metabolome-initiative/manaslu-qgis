@@ -12,7 +12,8 @@ following the `jbn-new` project structure.
 - Species lookup: `qgis/manaslu/species_list.gpkg`
 - Collector lookup: `qgis/manaslu/collector_list.gpkg`
 - Observation subject lookup: `qgis/manaslu/observation_subject.gpkg`
-- Map layer: `qgis/manaslu/optimized_maps/Manaslu-EMI.kml`
+- Map polygon: `qgis/manaslu/optimized_maps/Manaslu-EMI.gpkg`
+- Offline basemap: `qgis/manaslu/optimized_maps/basemap.mbtiles`
 
 ## QField conventions
 
@@ -25,8 +26,10 @@ following the `jbn-new` project structure.
 
 ## Source map
 
-The map layer was copied from `/Users/pma/Downloads/Manaslu-EMI.kml` and added
-as the single layer in the project `map` group.
+The source polygon was copied from `/Users/pma/Downloads/Manaslu-EMI.kml`,
+converted to GeoPackage, and added to the project `map` group. The offline
+satellite basemap is stored as an MBTiles file in `optimized_maps/` so QFieldSync
+can transfer it with the project.
 
 ## Taxonomic resolution
 
