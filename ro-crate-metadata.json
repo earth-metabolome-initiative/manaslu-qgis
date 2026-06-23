@@ -1,0 +1,204 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/terms/workflow-run/context"
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        }
+      ]
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "manaslu taxa resolution dataset",
+      "description": "Manaslu taxa list, derived gnverifier outputs, and execution provenance for the taxa resolution workflow.",
+      "datePublished": "2026-06-10T21:15:14.248379+02:00",
+      "hasPart": [
+        {
+          "@id": "data/taxa_list/input_taxa_list.csv"
+        },
+        {
+          "@id": "README.md"
+        },
+        {
+          "@id": "scripts/resolve_taxa.py"
+        },
+        {
+          "@id": "data/taxa_list/input_taxa_list_names.txt"
+        },
+        {
+          "@id": "data/taxa_list/input_taxa_list_gnverifier.csv"
+        },
+        {
+          "@id": "data/taxa_list/input_taxa_list_resolved.csv"
+        },
+        {
+          "@id": "ro-crate-metadata.json"
+        }
+      ],
+      "mentions": [
+        {
+          "@id": "#resolve-taxa-run"
+        },
+        {
+          "@id": "#resolve-taxa-parameters"
+        },
+        {
+          "@id": "#resolve-taxa-script"
+        },
+        {
+          "@id": "#gnverifier"
+        },
+        {
+          "@id": "#python"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.5"
+        }
+      ],
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.5"
+        }
+      ]
+    },
+    {
+      "@id": "#resolve-taxa-script",
+      "@type": "SoftwareSourceCode",
+      "name": "resolve_taxa.py",
+      "programmingLanguage": {
+        "@id": "#python-language"
+      },
+      "codeRepository": {
+        "@id": "./"
+      },
+      "version": "210851dc40e8ca26144286577a59570a17cbbe2e",
+      "softwareRequirements": [
+        {
+          "@id": "#python"
+        },
+        {
+          "@id": "#gnverifier"
+        }
+      ],
+      "subjectOf": {
+        "@id": "scripts/resolve_taxa.py"
+      }
+    },
+    {
+      "@id": "#python-language",
+      "@type": "ComputerLanguage",
+      "name": "Python",
+      "version": "3.12.8"
+    },
+    {
+      "@id": "#python",
+      "@type": "SoftwareApplication",
+      "name": "Python",
+      "version": "3.12.8"
+    },
+    {
+      "@id": "#gnverifier",
+      "@type": "SoftwareApplication",
+      "name": "gnverifier",
+      "version": "v1.1.5"
+    },
+    {
+      "@id": "#resolve-taxa-run",
+      "@type": "CreateAction",
+      "name": "Resolve taxa names with gnverifier",
+      "description": "python3 scripts/resolve_taxa.py --force --header taxon_name --dedupe-input",
+      "endTime": "2026-06-10T21:15:14.248379+02:00",
+      "instrument": {
+        "@id": "#resolve-taxa-script"
+      },
+      "object": [
+        {
+          "@id": "data/taxa_list/input_taxa_list.csv"
+        }
+      ],
+      "result": [
+        {
+          "@id": "data/taxa_list/input_taxa_list_names.txt"
+        },
+        {
+          "@id": "data/taxa_list/input_taxa_list_gnverifier.csv"
+        },
+        {
+          "@id": "data/taxa_list/input_taxa_list_resolved.csv"
+        }
+      ],
+      "subjectOf": {
+        "@id": "#resolve-taxa-parameters"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.5",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate profile"
+    },
+    {
+      "@id": "data/taxa_list/input_taxa_list.csv",
+      "@type": "File",
+      "name": "input_taxa_list.csv",
+      "contentSize": "363309",
+      "dateModified": "2026-06-10T21:04:25.230495+02:00",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@id": "README.md",
+      "@type": "File",
+      "name": "README.md",
+      "contentSize": "1345",
+      "dateModified": "2026-06-10T21:04:55.359001+02:00",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "scripts/resolve_taxa.py",
+      "@type": "File",
+      "name": "resolve_taxa.py",
+      "contentSize": "18824",
+      "dateModified": "2026-06-10T21:14:28.202410+02:00",
+      "encodingFormat": "text/x-python"
+    },
+    {
+      "@id": "data/taxa_list/input_taxa_list_names.txt",
+      "@type": "File",
+      "name": "input_taxa_list_names.txt",
+      "contentSize": "50879",
+      "dateModified": "2026-06-10T21:15:03.421756+02:00",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@id": "data/taxa_list/input_taxa_list_gnverifier.csv",
+      "@type": "File",
+      "name": "input_taxa_list_gnverifier.csv",
+      "contentSize": "587419",
+      "dateModified": "2026-06-10T21:15:14.193952+02:00",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@id": "data/taxa_list/input_taxa_list_resolved.csv",
+      "@type": "File",
+      "name": "input_taxa_list_resolved.csv",
+      "contentSize": "950469",
+      "dateModified": "2026-06-10T21:15:14.247709+02:00",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@id": "#resolve-taxa-parameters",
+      "@type": "PropertyValue",
+      "name": "resolve_taxa parameters",
+      "value": "{\"dedupe_input\": true, \"delimiter\": null, \"header\": \"taxon_name\"}"
+    }
+  ]
+}
