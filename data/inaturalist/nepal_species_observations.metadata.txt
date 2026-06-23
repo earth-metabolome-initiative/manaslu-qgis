@@ -1,0 +1,16 @@
+iNaturalist species counts for the Manaslu field region
+created_at_utc=2026-06-23T11:11:26.607034+00:00
+source=pyinaturalist.get_observation_species_counts
+place_id=7335
+country_code=NP
+country_name=Nepal
+bbox_swlat=
+bbox_swlng=
+bbox_nelat=
+bbox_nelng=
+quality_grade=any
+iconic_taxa=
+per_page=200
+max_pages=
+row_count=9282
+note=The default query uses a bounding box around the Manaslu polygon. Country queries use iNaturalist place IDs.

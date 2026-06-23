@@ -21,10 +21,10 @@
       "@type": "Dataset",
       "name": "manaslu taxa resolution dataset",
       "description": "Manaslu taxa list, derived gnverifier outputs, and execution provenance for the taxa resolution workflow.",
-      "datePublished": "2026-06-10T21:15:14.248379+02:00",
+      "datePublished": "2026-06-23T13:15:08.352855+02:00",
       "hasPart": [
         {
-          "@id": "data/taxa_list/input_taxa_list.csv"
+          "@id": "data/inaturalist/nepal_species_observations.csv"
         },
         {
           "@id": "README.md"
@@ -33,13 +33,13 @@
           "@id": "scripts/resolve_taxa.py"
         },
         {
-          "@id": "data/taxa_list/input_taxa_list_names.txt"
+          "@id": "data/inaturalist/nepal_species_observations_names.txt"
         },
         {
-          "@id": "data/taxa_list/input_taxa_list_gnverifier.csv"
+          "@id": "data/inaturalist/nepal_species_observations_gnverifier.csv"
         },
         {
-          "@id": "data/taxa_list/input_taxa_list_resolved.csv"
+          "@id": "data/inaturalist/nepal_species_observations_resolved.csv"
         },
         {
           "@id": "ro-crate-metadata.json"
@@ -81,7 +81,7 @@
       "codeRepository": {
         "@id": "./"
       },
-      "version": "210851dc40e8ca26144286577a59570a17cbbe2e",
+      "version": "e4e0148aca775505b5325b7d10259dc0b80960b0",
       "softwareRequirements": [
         {
           "@id": "#python"
@@ -116,25 +116,25 @@
       "@id": "#resolve-taxa-run",
       "@type": "CreateAction",
       "name": "Resolve taxa names with gnverifier",
-      "description": "python3 scripts/resolve_taxa.py --force --header taxon_name --dedupe-input",
-      "endTime": "2026-06-10T21:15:14.248379+02:00",
+      "description": "python3 scripts/resolve_taxa.py --input data/inaturalist/nepal_species_observations.csv --header scientific_name --dedupe-input --force",
+      "endTime": "2026-06-23T13:15:08.352855+02:00",
       "instrument": {
         "@id": "#resolve-taxa-script"
       },
       "object": [
         {
-          "@id": "data/taxa_list/input_taxa_list.csv"
+          "@id": "data/inaturalist/nepal_species_observations.csv"
         }
       ],
       "result": [
         {
-          "@id": "data/taxa_list/input_taxa_list_names.txt"
+          "@id": "data/inaturalist/nepal_species_observations_names.txt"
         },
         {
-          "@id": "data/taxa_list/input_taxa_list_gnverifier.csv"
+          "@id": "data/inaturalist/nepal_species_observations_gnverifier.csv"
         },
         {
-          "@id": "data/taxa_list/input_taxa_list_resolved.csv"
+          "@id": "data/inaturalist/nepal_species_observations_resolved.csv"
         }
       ],
       "subjectOf": {
@@ -147,58 +147,58 @@
       "name": "Process Run Crate profile"
     },
     {
-      "@id": "data/taxa_list/input_taxa_list.csv",
+      "@id": "data/inaturalist/nepal_species_observations.csv",
       "@type": "File",
-      "name": "input_taxa_list.csv",
-      "contentSize": "363309",
-      "dateModified": "2026-06-10T21:04:25.230495+02:00",
+      "name": "nepal_species_observations.csv",
+      "contentSize": "2238220",
+      "dateModified": "2026-06-23T13:11:26.604817+02:00",
       "encodingFormat": "text/csv"
     },
     {
       "@id": "README.md",
       "@type": "File",
       "name": "README.md",
-      "contentSize": "1345",
-      "dateModified": "2026-06-10T21:04:55.359001+02:00",
+      "contentSize": "4269",
+      "dateModified": "2026-06-23T13:03:58.985610+02:00",
       "encodingFormat": "text/markdown"
     },
     {
       "@id": "scripts/resolve_taxa.py",
       "@type": "File",
       "name": "resolve_taxa.py",
-      "contentSize": "18824",
-      "dateModified": "2026-06-10T21:14:28.202410+02:00",
+      "contentSize": "18806",
+      "dateModified": "2026-06-23T09:51:30.725233+02:00",
       "encodingFormat": "text/x-python"
     },
     {
-      "@id": "data/taxa_list/input_taxa_list_names.txt",
+      "@id": "data/inaturalist/nepal_species_observations_names.txt",
       "@type": "File",
-      "name": "input_taxa_list_names.txt",
-      "contentSize": "50879",
-      "dateModified": "2026-06-10T21:15:03.421756+02:00",
+      "name": "nepal_species_observations_names.txt",
+      "contentSize": "181858",
+      "dateModified": "2026-06-23T13:14:45.757837+02:00",
       "encodingFormat": "text/plain"
     },
     {
-      "@id": "data/taxa_list/input_taxa_list_gnverifier.csv",
+      "@id": "data/inaturalist/nepal_species_observations_gnverifier.csv",
       "@type": "File",
-      "name": "input_taxa_list_gnverifier.csv",
-      "contentSize": "587419",
-      "dateModified": "2026-06-10T21:15:14.193952+02:00",
+      "name": "nepal_species_observations_gnverifier.csv",
+      "contentSize": "2781124",
+      "dateModified": "2026-06-23T13:15:08.127917+02:00",
       "encodingFormat": "text/csv"
     },
     {
-      "@id": "data/taxa_list/input_taxa_list_resolved.csv",
+      "@id": "data/inaturalist/nepal_species_observations_resolved.csv",
       "@type": "File",
-      "name": "input_taxa_list_resolved.csv",
-      "contentSize": "950469",
-      "dateModified": "2026-06-10T21:15:14.247709+02:00",
+      "name": "nepal_species_observations_resolved.csv",
+      "contentSize": "5019344",
+      "dateModified": "2026-06-23T13:15:08.344972+02:00",
       "encodingFormat": "text/csv"
     },
     {
       "@id": "#resolve-taxa-parameters",
       "@type": "PropertyValue",
       "name": "resolve_taxa parameters",
-      "value": "{\"dedupe_input\": true, \"delimiter\": null, \"header\": \"taxon_name\"}"
+      "value": "{\"dedupe_input\": true, \"delimiter\": null, \"header\": \"scientific_name\"}"
     }
   ]
 }

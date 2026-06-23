@@ -33,18 +33,89 @@ can transfer it with the project.
 
 ## Taxonomic resolution
 
-Taxa are resolved with `gnverifier` via:
+The active QField species lookup is built from the Nepal-wide iNaturalist
+species export. Taxa are resolved with `gnverifier` via:
 
 ```bash
-python3 scripts/resolve_taxa.py --force --header taxon_name --dedupe-input
+uv run python scripts/resolve_taxa.py \
+  --input data/inaturalist/nepal_species_observations.csv \
+  --header scientific_name \
+  --dedupe-input \
+  --force
+cp data/inaturalist/nepal_species_observations_resolved.csv qgis/manaslu/species_list.csv
 ogr2ogr -f GPKG qgis/manaslu/species_list.gpkg qgis/manaslu/species_list.csv -nln species_list -nlt NONE -overwrite -oo EMPTY_STRING_AS_NULL=YES
 ```
 
 The workflow writes:
 
-- `data/taxa_list/input_taxa_list_names.txt`
-- `data/taxa_list/input_taxa_list_gnverifier.csv`
-- `data/taxa_list/input_taxa_list_resolved.csv`
+- `data/inaturalist/nepal_species_observations_names.txt`
+- `data/inaturalist/nepal_species_observations_gnverifier.csv`
+- `data/inaturalist/nepal_species_observations_resolved.csv`
 
 `qgis/manaslu/species_list.csv` and `qgis/manaslu/species_list.gpkg` are built
 from the resolved CSV so QField can populate `MatchedCanonical` and `TaxonId`.
+
+## iNaturalist regional species
+
+Candidate species observed around the Manaslu field polygon can be fetched from
+iNaturalist with `pyinaturalist`. The query uses the bounding box of
+`qgis/manaslu/optimized_maps/Manaslu-EMI.gpkg`, because the iNaturalist species
+counts endpoint accepts rectangular spatial filters.
+
+Install dependencies and run:
+
+```bash
+uv sync
+uv run python scripts/fetch_inaturalist_species.py
+```
+
+The default output is:
+
+- `data/inaturalist/manaslu_species_observations.csv`
+- `data/inaturalist/manaslu_species_observations.metadata.txt`
+
+Useful variants:
+
+```bash
+# Plant-only list for collection planning
+uv run python scripts/fetch_inaturalist_species.py --iconic-taxa Plantae
+
+# Restrict to research-grade records only
+uv run python scripts/fetch_inaturalist_species.py --quality-grade research
+
+# Search another rectangular area
+uv run python scripts/fetch_inaturalist_species.py \
+  --south 28.55 --west 84.60 --north 28.70 --east 84.82 \
+  --output data/inaturalist/another_area_species.csv
+
+# Equivalent compact form: south,west,north,east
+uv run python scripts/fetch_inaturalist_species.py \
+  --bbox 28.30,84.29,28.40,84.57
+
+# Search all species observed in Nepal by ISO country code
+uv run python scripts/fetch_inaturalist_species.py \
+  --country-code NP \
+  --output data/inaturalist/nepal_species_observations.csv
+
+# Search by known iNaturalist place ID directly
+uv run python scripts/fetch_inaturalist_species.py \
+  --place-id 7335 \
+  --output data/inaturalist/nepal_species_observations.csv
+
+# Quick smoke run while developing
+uv run python scripts/fetch_inaturalist_species.py --max-pages 1
+```
+
+The CSV includes iNaturalist taxon IDs, scientific names, common names, broad
+taxon group, regional observation counts, global observation counts, and a
+representative photo URL/license when available.
+
+To find coordinates in Google Maps, right-click the southwest corner of your
+desired search rectangle and copy the latitude/longitude shown in the menu; use
+those as `--south` and `--west`. Then right-click the northeast corner and use
+those values as `--north` and `--east`. Google Maps shows coordinates as
+`latitude, longitude`.
+
+For country-wide searches, use ISO 3166-1 country codes such as `NP` or `NPL`
+for Nepal. The script resolves the code to an iNaturalist place ID before
+querying observations.

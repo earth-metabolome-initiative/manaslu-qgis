@@ -1,0 +1,13 @@
+iNaturalist species counts for the Manaslu field region
+created_at_utc=2026-06-23T10:05:07.556580+00:00
+source=pyinaturalist.get_observation_species_counts
+bbox_swlat=28.3
+bbox_swlng=84.29
+bbox_nelat=28.4
+bbox_nelng=84.57
+quality_grade=any
+iconic_taxa=
+per_page=200
+max_pages=
+row_count=205
+note=The iNaturalist API query uses a bounding box around the Manaslu polygon.
