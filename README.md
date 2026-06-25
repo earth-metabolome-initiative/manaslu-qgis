@@ -26,7 +26,7 @@ following the `jbn-new` project structure.
 
 ## Source map
 
-The source polygon was copied from `/Users/pma/Downloads/Manaslu-EMI.kml`,
+The source polygon was copied from `/Users/pma/Downloads/Manaslu-EMI-red.kml`,
 converted to GeoPackage, and added to the project `map` group. The offline
 satellite basemap is stored as an MBTiles file in `optimized_maps/` so QFieldSync
 can transfer it with the project.
