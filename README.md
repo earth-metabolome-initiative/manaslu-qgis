@@ -34,7 +34,8 @@ can transfer it with the project.
 ## Taxonomic resolution
 
 The active QField species lookup is built from the Nepal-wide iNaturalist
-species export. Taxa are resolved with `gnverifier` via:
+species export plus higher taxa derived from the gnverifier classification
+paths. Taxa are resolved with `gnverifier` via:
 
 ```bash
 uv run python scripts/resolve_taxa.py \
@@ -42,7 +43,23 @@ uv run python scripts/resolve_taxa.py \
   --header scientific_name \
   --dedupe-input \
   --force
-cp data/inaturalist/nepal_species_observations_resolved.csv qgis/manaslu/species_list.csv
+
+python3 scripts/build_higher_taxa_input.py \
+  --input data/inaturalist/nepal_species_observations_resolved.csv \
+  --output data/inaturalist/nepal_higher_taxa.csv
+
+python3 scripts/resolve_taxa.py \
+  --input data/inaturalist/nepal_higher_taxa.csv \
+  --header scientific_name \
+  --dedupe-input \
+  --force \
+  --ro-crate data/inaturalist/nepal_higher_taxa_ro-crate-metadata.json
+
+python3 scripts/combine_species_and_higher_taxa.py \
+  --species data/inaturalist/nepal_species_observations_resolved.csv \
+  --higher-taxa data/inaturalist/nepal_higher_taxa_resolved.csv \
+  --output qgis/manaslu/species_list.csv
+
 ogr2ogr -f GPKG qgis/manaslu/species_list.gpkg qgis/manaslu/species_list.csv -nln species_list -nlt NONE -overwrite -oo EMPTY_STRING_AS_NULL=YES
 ```
 
@@ -51,9 +68,16 @@ The workflow writes:
 - `data/inaturalist/nepal_species_observations_names.txt`
 - `data/inaturalist/nepal_species_observations_gnverifier.csv`
 - `data/inaturalist/nepal_species_observations_resolved.csv`
+- `data/inaturalist/nepal_higher_taxa.csv`
+- `data/inaturalist/nepal_higher_taxa_gnverifier.csv`
+- `data/inaturalist/nepal_higher_taxa_resolved.csv`
 
 `qgis/manaslu/species_list.csv` and `qgis/manaslu/species_list.gpkg` are built
-from the resolved CSV so QField can populate `MatchedCanonical` and `TaxonId`.
+from the combined resolved CSV so QField can populate `MatchedCanonical` and
+`TaxonId`. The combined lookup includes a `lookup_type` field with `species` or
+`higher_taxon`, plus `taxon_rank` and `taxon_rank_source` fields. Species ranks
+come from iNaturalist; higher-taxon ranks are inferred from known names,
+taxonomic suffixes, and classification-path position.
 
 ## iNaturalist regional species
 

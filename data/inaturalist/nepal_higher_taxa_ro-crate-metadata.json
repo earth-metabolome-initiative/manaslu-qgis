@@ -1,0 +1,204 @@
+{
+  "@context": [
+    "https://w3id.org/ro/crate/1.1/context",
+    "https://w3id.org/ro/terms/workflow-run/context"
+  ],
+  "@graph": [
+    {
+      "@id": "ro-crate-metadata.json",
+      "@type": "CreativeWork",
+      "about": {
+        "@id": "./"
+      },
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/crate/1.1"
+        }
+      ]
+    },
+    {
+      "@id": "./",
+      "@type": "Dataset",
+      "name": "manaslu taxa resolution dataset",
+      "description": "Manaslu taxa list, derived gnverifier outputs, and execution provenance for the taxa resolution workflow.",
+      "datePublished": "2026-06-23T15:31:36.391544+02:00",
+      "hasPart": [
+        {
+          "@id": "nepal_higher_taxa.csv"
+        },
+        {
+          "@id": "file:///Users/pma/git_repos/EMI/manaslu-qgis/README.md"
+        },
+        {
+          "@id": "file:///Users/pma/git_repos/EMI/manaslu-qgis/scripts/resolve_taxa.py"
+        },
+        {
+          "@id": "nepal_higher_taxa_names.txt"
+        },
+        {
+          "@id": "nepal_higher_taxa_gnverifier.csv"
+        },
+        {
+          "@id": "nepal_higher_taxa_resolved.csv"
+        },
+        {
+          "@id": "nepal_higher_taxa_ro-crate-metadata.json"
+        }
+      ],
+      "mentions": [
+        {
+          "@id": "#resolve-taxa-run"
+        },
+        {
+          "@id": "#resolve-taxa-parameters"
+        },
+        {
+          "@id": "#resolve-taxa-script"
+        },
+        {
+          "@id": "#gnverifier"
+        },
+        {
+          "@id": "#python"
+        },
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.5"
+        }
+      ],
+      "conformsTo": [
+        {
+          "@id": "https://w3id.org/ro/wfrun/process/0.5"
+        }
+      ]
+    },
+    {
+      "@id": "#resolve-taxa-script",
+      "@type": "SoftwareSourceCode",
+      "name": "resolve_taxa.py",
+      "programmingLanguage": {
+        "@id": "#python-language"
+      },
+      "codeRepository": {
+        "@id": "./"
+      },
+      "version": "0b51af557acc3342a55d234d77fdf8a40aa0478f",
+      "softwareRequirements": [
+        {
+          "@id": "#python"
+        },
+        {
+          "@id": "#gnverifier"
+        }
+      ],
+      "subjectOf": {
+        "@id": "file:///Users/pma/git_repos/EMI/manaslu-qgis/scripts/resolve_taxa.py"
+      }
+    },
+    {
+      "@id": "#python-language",
+      "@type": "ComputerLanguage",
+      "name": "Python",
+      "version": "3.12.8"
+    },
+    {
+      "@id": "#python",
+      "@type": "SoftwareApplication",
+      "name": "Python",
+      "version": "3.12.8"
+    },
+    {
+      "@id": "#gnverifier",
+      "@type": "SoftwareApplication",
+      "name": "gnverifier",
+      "version": "v1.1.5"
+    },
+    {
+      "@id": "#resolve-taxa-run",
+      "@type": "CreateAction",
+      "name": "Resolve taxa names with gnverifier",
+      "description": "python3 scripts/resolve_taxa.py --input data/inaturalist/nepal_higher_taxa.csv --header scientific_name --dedupe-input --force --ro-crate data/inaturalist/nepal_higher_taxa_ro-crate-metadata.json",
+      "endTime": "2026-06-23T15:31:36.391544+02:00",
+      "instrument": {
+        "@id": "#resolve-taxa-script"
+      },
+      "object": [
+        {
+          "@id": "nepal_higher_taxa.csv"
+        }
+      ],
+      "result": [
+        {
+          "@id": "nepal_higher_taxa_names.txt"
+        },
+        {
+          "@id": "nepal_higher_taxa_gnverifier.csv"
+        },
+        {
+          "@id": "nepal_higher_taxa_resolved.csv"
+        }
+      ],
+      "subjectOf": {
+        "@id": "#resolve-taxa-parameters"
+      }
+    },
+    {
+      "@id": "https://w3id.org/ro/wfrun/process/0.5",
+      "@type": "CreativeWork",
+      "name": "Process Run Crate profile"
+    },
+    {
+      "@id": "nepal_higher_taxa.csv",
+      "@type": "File",
+      "name": "nepal_higher_taxa.csv",
+      "contentSize": "1834814",
+      "dateModified": "2026-06-23T15:31:12.021365+02:00",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@id": "file:///Users/pma/git_repos/EMI/manaslu-qgis/README.md",
+      "@type": "File",
+      "name": "README.md",
+      "contentSize": "5405",
+      "dateModified": "2026-06-23T15:28:18.627612+02:00",
+      "encodingFormat": "text/markdown"
+    },
+    {
+      "@id": "file:///Users/pma/git_repos/EMI/manaslu-qgis/scripts/resolve_taxa.py",
+      "@type": "File",
+      "name": "resolve_taxa.py",
+      "contentSize": "18806",
+      "dateModified": "2026-06-23T09:51:30.725233+02:00",
+      "encodingFormat": "text/x-python"
+    },
+    {
+      "@id": "nepal_higher_taxa_names.txt",
+      "@type": "File",
+      "name": "nepal_higher_taxa_names.txt",
+      "contentSize": "100778",
+      "dateModified": "2026-06-23T15:31:21.974017+02:00",
+      "encodingFormat": "text/plain"
+    },
+    {
+      "@id": "nepal_higher_taxa_gnverifier.csv",
+      "@type": "File",
+      "name": "nepal_higher_taxa_gnverifier.csv",
+      "contentSize": "2090907",
+      "dateModified": "2026-06-23T15:31:36.200436+02:00",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@id": "nepal_higher_taxa_resolved.csv",
+      "@type": "File",
+      "name": "nepal_higher_taxa_resolved.csv",
+      "contentSize": "3925721",
+      "dateModified": "2026-06-23T15:31:36.382942+02:00",
+      "encodingFormat": "text/csv"
+    },
+    {
+      "@id": "#resolve-taxa-parameters",
+      "@type": "PropertyValue",
+      "name": "resolve_taxa parameters",
+      "value": "{\"dedupe_input\": true, \"delimiter\": null, \"header\": \"scientific_name\"}"
+    }
+  ]
+}
