@@ -2193,7 +2193,7 @@ def my_form_open(dialog, layer, feature):
         <constraint desc="" exp="" field="taxon_name"/>
         <constraint desc="" exp="" field="no_name_on_list"/>
         <constraint desc="" exp="" field="name_proposition"/>
-        <constraint desc="sample id pattern" exp="regexp_match(&quot;sample_id&quot;, '^dbgi_[0-9]{6}$')" field="sample_id"/>
+        <constraint desc="sample id pattern" exp="regexp_match(&quot;sample_id&quot;, '^mnsl_[0-9]{6}$')" field="sample_id"/>
         <constraint desc="" exp="" field="picture_panel"/>
         <constraint desc="" exp="" field="picture_general"/>
         <constraint desc="" exp="" field="picture_detail"/>
@@ -2289,7 +2289,7 @@ def my_form_open(dialog, layer, feature):
         <labelStyle overrideLabelColor="0" overrideLabelFont="0" labelColor="">
           <labelFont underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" italic="0" strikethrough="0"/>
         </labelStyle>
-        <attributeEditorContainer visibilityExpression="&quot;picture_general&quot; IS NULL AND &quot;picture_panel&quot; IS NULL AND&#xa;&quot;picture_panel_label&quot; IS NULL AND &quot;picture_detail&quot; IS NULL AND&#xa;&quot;picture_cut&quot; IS NULL" horizontalStretch="0" collapsed="0" groupBox="1" columnCount="1" verticalStretch="0" collapsedExpression="regexp_match(&quot;sample_id&quot;, '^dbgi_[0-9]{6}$')" type="GroupBox" showLabel="1" collapsedExpressionEnabled="0" visibilityExpressionEnabled="1" name="sample_id">
+        <attributeEditorContainer visibilityExpression="&quot;picture_general&quot; IS NULL AND &quot;picture_panel&quot; IS NULL AND&#xa;&quot;picture_panel_label&quot; IS NULL AND &quot;picture_detail&quot; IS NULL AND&#xa;&quot;picture_cut&quot; IS NULL" horizontalStretch="0" collapsed="0" groupBox="1" columnCount="1" verticalStretch="0" collapsedExpression="regexp_match(&quot;sample_id&quot;, '^mnsl_[0-9]{6}$')" type="GroupBox" showLabel="1" collapsedExpressionEnabled="0" visibilityExpressionEnabled="1" name="sample_id">
           <labelStyle overrideLabelColor="0" overrideLabelFont="0" labelColor="">
             <labelFont underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" italic="0" strikethrough="0"/>
           </labelStyle>
@@ -2299,7 +2299,7 @@ def my_form_open(dialog, layer, feature):
             </labelStyle>
           </attributeEditorField>
         </attributeEditorContainer>
-        <attributeEditorContainer visibilityExpression="regexp_match(&quot;sample_id&quot;, '^dbgi_[0-9]{6}$') AND aggregate(&#xa;    layer:='observations',&#xa;    aggregate:='count',&#xa;    expression:=1,&#xa;    filter:=&quot;sample_id&quot; = attribute(@parent, 'sample_id')&#xa;) = 0" horizontalStretch="0" collapsed="0" groupBox="1" columnCount="1" verticalStretch="0" collapsedExpression="" type="GroupBox" showLabel="1" collapsedExpressionEnabled="0" visibilityExpressionEnabled="1" name="sample metadata">
+        <attributeEditorContainer visibilityExpression="regexp_match(&quot;sample_id&quot;, '^mnsl_[0-9]{6}$') AND aggregate(&#xa;    layer:='observations',&#xa;    aggregate:='count',&#xa;    expression:=1,&#xa;    filter:=&quot;sample_id&quot; = attribute(@parent, 'sample_id')&#xa;) = 0" horizontalStretch="0" collapsed="0" groupBox="1" columnCount="1" verticalStretch="0" collapsedExpression="" type="GroupBox" showLabel="1" collapsedExpressionEnabled="0" visibilityExpressionEnabled="1" name="sample metadata">
           <labelStyle overrideLabelColor="0" overrideLabelFont="0" labelColor="0,0,0,255,rgb:0,0,0,1">
             <labelFont underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" italic="0" strikethrough="0"/>
           </labelStyle>
@@ -2378,7 +2378,7 @@ def my_form_open(dialog, layer, feature):
               </labelStyle>
             </attributeEditorField>
           </attributeEditorContainer>
-          <attributeEditorContainer visibilityExpression="regexp_match(&quot;sample_id&quot;,'^dbgi_[0-9]{6}$') AND (if(&quot;no_name_on_list&quot; = 0, &quot;taxon_name&quot; IS NOT NULL, TRUE)) AND (if(&quot;no_name_on_list&quot; = 1, &quot;name_proposition&quot; IS NOT NULL, TRUE))" horizontalStretch="0" collapsed="0" groupBox="1" columnCount="1" verticalStretch="0" collapsedExpression="" type="GroupBox" showLabel="1" collapsedExpressionEnabled="0" visibilityExpressionEnabled="1" name="pictures">
+          <attributeEditorContainer visibilityExpression="regexp_match(&quot;sample_id&quot;,'^mnsl_[0-9]{6}$') AND (if(&quot;no_name_on_list&quot; = 0, &quot;taxon_name&quot; IS NOT NULL, TRUE)) AND (if(&quot;no_name_on_list&quot; = 1, &quot;name_proposition&quot; IS NOT NULL, TRUE))" horizontalStretch="0" collapsed="0" groupBox="1" columnCount="1" verticalStretch="0" collapsedExpression="" type="GroupBox" showLabel="1" collapsedExpressionEnabled="0" visibilityExpressionEnabled="1" name="pictures">
             <labelStyle overrideLabelColor="0" overrideLabelFont="0" labelColor="0,0,0,255,rgb:0,0,0,1">
               <labelFont underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" italic="0" strikethrough="0"/>
             </labelStyle>
@@ -2414,7 +2414,7 @@ def my_form_open(dialog, layer, feature):
             </attributeEditorField>
           </attributeEditorContainer>
         </attributeEditorContainer>
-        <attributeEditorContainer visibilityExpression="regexp_match(&quot;sample_id&quot;,'^dbgi_[0-9]{6}$') AND (if(&quot;no_name_on_list&quot; = 0, &quot;taxon_name&quot; IS NOT NULL, TRUE)) AND (if(&quot;no_name_on_list&quot; = 1, &quot;name_proposition&quot; IS NOT NULL, TRUE))" horizontalStretch="0" collapsed="0" groupBox="1" columnCount="1" verticalStretch="0" collapsedExpression="" type="GroupBox" showLabel="1" collapsedExpressionEnabled="0" visibilityExpressionEnabled="1" name="individual_metadata">
+        <attributeEditorContainer visibilityExpression="regexp_match(&quot;sample_id&quot;,'^mnsl_[0-9]{6}$') AND (if(&quot;no_name_on_list&quot; = 0, &quot;taxon_name&quot; IS NOT NULL, TRUE)) AND (if(&quot;no_name_on_list&quot; = 1, &quot;name_proposition&quot; IS NOT NULL, TRUE))" horizontalStretch="0" collapsed="0" groupBox="1" columnCount="1" verticalStretch="0" collapsedExpression="" type="GroupBox" showLabel="1" collapsedExpressionEnabled="0" visibilityExpressionEnabled="1" name="individual_metadata">
           <labelStyle overrideLabelColor="0" overrideLabelFont="0" labelColor="0,0,0,255,rgb:0,0,0,1">
             <labelFont underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" italic="0" strikethrough="0"/>
           </labelStyle>
@@ -2434,7 +2434,7 @@ def my_form_open(dialog, layer, feature):
             </labelStyle>
           </attributeEditorField>
         </attributeEditorContainer>
-        <attributeEditorContainer visibilityExpression="regexp_match(&quot;sample_id&quot;,'^dbgi_[0-9]{6}$') AND (if(&quot;no_name_on_list&quot; = 0, &quot;taxon_name&quot; IS NOT NULL, TRUE)) AND (if(&quot;no_name_on_list&quot; = 1, &quot;name_proposition&quot; IS NOT NULL, TRUE))" horizontalStretch="0" collapsed="0" groupBox="1" columnCount="1" verticalStretch="0" collapsedExpression="" type="GroupBox" showLabel="1" collapsedExpressionEnabled="0" visibilityExpressionEnabled="1" name="environmental metadata">
+        <attributeEditorContainer visibilityExpression="regexp_match(&quot;sample_id&quot;,'^mnsl_[0-9]{6}$') AND (if(&quot;no_name_on_list&quot; = 0, &quot;taxon_name&quot; IS NOT NULL, TRUE)) AND (if(&quot;no_name_on_list&quot; = 1, &quot;name_proposition&quot; IS NOT NULL, TRUE))" horizontalStretch="0" collapsed="0" groupBox="1" columnCount="1" verticalStretch="0" collapsedExpression="" type="GroupBox" showLabel="1" collapsedExpressionEnabled="0" visibilityExpressionEnabled="1" name="environmental metadata">
           <labelStyle overrideLabelColor="0" overrideLabelFont="0" labelColor="0,0,0,255,rgb:0,0,0,1">
             <labelFont underline="0" description=".AppleSystemUIFont,13,-1,5,50,0,0,0,0,0" style="" bold="0" italic="0" strikethrough="0"/>
           </labelStyle>

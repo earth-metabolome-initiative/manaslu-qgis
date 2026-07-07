@@ -18,9 +18,9 @@ following the `jbn-new` project structure.
 ## QField conventions
 
 - The active observation layer follows the same schema as `jbn-new`.
-- Sample identifiers must match `dbgi_######`.
+- Sample identifiers must match `mnsl_######`.
 - QField image paths are generated from the sample identifier only, for example
-  `DCIM/manaslu/dbgi_001234_01.jpg`.
+  `DCIM/manaslu/mnsl_001234_01.jpg`.
 - Taxon names are used for lookup/display fields, but not for image naming.
 - `uuid_qfield` is generated automatically with QGIS `uuid('WithoutBraces')`.
 
