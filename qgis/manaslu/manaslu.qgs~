@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis saveUserFull="pma" saveUser="pma" version="3.40.5-Bratislava" projectname="manaslu" saveDateTime="2026-06-23T14:56:23">
+<qgis saveUserFull="pma" saveUser="pma" version="3.40.5-Bratislava" projectname="manaslu" saveDateTime="2026-06-23T15:09:40">
   <homePath path=""/>
   <title>manaslu</title>
   <transaction mode="Disabled"/>
@@ -105,10 +105,10 @@
   <mapcanvas annotationsVisible="1" name="theMapCanvas">
     <units>degrees</units>
     <extent>
-      <xmin>84.62797855187102414</xmin>
-      <ymin>28.58142512250679701</ymin>
-      <xmax>84.65875993418887901</xmax>
-      <ymax>28.60025256994407883</ymax>
+      <xmin>84.61245030667157607</xmin>
+      <ymin>28.58259817219136067</ymin>
+      <xmax>84.64323168898943095</xmax>
+      <ymax>28.60142561962864249</ymax>
     </extent>
     <rotation>0</rotation>
     <destinationsrs>
@@ -4360,7 +4360,7 @@ def my_form_open(dialog, layer, feature):
   <Sensors/>
   <ProjectViewSettings rotation="0" UseProjectScales="0">
     <Scales/>
-    <DefaultViewExtent ymax="28.60025256994407883" ymin="28.58142512250679701" xmin="84.62611074954577361" xmax="84.66062773651412954">
+    <DefaultViewExtent ymax="28.60142561962864249" ymin="28.58259817219136067" xmin="84.61058250434632555" xmax="84.64509949131468147">
       <spatialrefsys nativeFormat="Wkt">
         <wkt>GEOGCRS["WGS 84",ENSEMBLE["World Geodetic System 1984 ensemble",MEMBER["World Geodetic System 1984 (Transit)"],MEMBER["World Geodetic System 1984 (G730)"],MEMBER["World Geodetic System 1984 (G873)"],MEMBER["World Geodetic System 1984 (G1150)"],MEMBER["World Geodetic System 1984 (G1674)"],MEMBER["World Geodetic System 1984 (G1762)"],ELLIPSOID["WGS 84",6378137,298.257223563,LENGTHUNIT["metre",1]],ENSEMBLEACCURACY[2.0]],PRIMEM["Greenwich",0,ANGLEUNIT["degree",0.0174532925199433]],CS[ellipsoidal,2],AXIS["geodetic latitude (Lat)",north,ORDER[1],ANGLEUNIT["degree",0.0174532925199433]],AXIS["geodetic longitude (Lon)",east,ORDER[2],ANGLEUNIT["degree",0.0174532925199433]],USAGE[SCOPE["Horizontal component of 3D system."],AREA["World."],BBOX[-90,-180,90,180]],ID["EPSG",4326]]</wkt>
         <proj4>+proj=longlat +datum=WGS84 +no_defs</proj4>
