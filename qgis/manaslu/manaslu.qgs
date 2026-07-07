@@ -1,5 +1,5 @@
 <!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
-<qgis version="3.40.5-Bratislava" saveUserFull="pma" saveDateTime="2026-07-07T15:59:07" projectname="manaslu" saveUser="pma">
+<qgis version="3.40.5-Bratislava" saveUserFull="pma" saveDateTime="2026-07-07T16:04:05" projectname="manaslu" saveUser="pma">
   <homePath path=""/>
   <title>manaslu</title>
   <transaction mode="Disabled"/>
@@ -1094,18 +1094,6 @@ def my_form_open(dialog, layer, feature):
       <mapTip enabled="1"></mapTip>
     </maplayer>
     <maplayer hasScaleBasedVisibilityFlag="0" styleCategories="AllStyleCategories" type="vector" simplifyLocal="1" geometry="Point" wkbType="Point" simplifyAlgorithm="0" autoRefreshMode="Disabled" simplifyDrawingHints="0" autoRefreshTime="0" refreshOnNotifyMessage="" legendPlaceholderImage="" simplifyDrawingTol="1" labelsEnabled="1" readOnly="0" maxScale="0" minScale="100000000" symbologyReferenceScale="-1" refreshOnNotifyEnabled="0" simplifyMaxScale="1">
-      <extent>
-        <xmin>84.62205505371089487</xmin>
-        <ymin>28.5545845031737997</ymin>
-        <xmax>84.68130493164059658</xmax>
-        <ymax>28.59006118774410155</ymax>
-      </extent>
-      <wgs84extent>
-        <xmin>84.62205505371089487</xmin>
-        <ymin>28.5545845031737997</ymin>
-        <xmax>84.68130493164059658</xmax>
-        <ymax>28.59006118774410155</ymax>
-      </wgs84extent>
       <id>manaslu_854e20dc_43c1_47af_99b2_77fecdfb7814</id>
       <datasource>./observations.gpkg|layername=observations</datasource>
       <keywordList>
